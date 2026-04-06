@@ -137,6 +137,7 @@ Requires:
 2. Select the **CI Build** workflow.
 3. Click **Run workflow** and choose your branch.
 4. After the run succeeds, download the `neb-build-artifacts` artifact (release jars in `build/libs`, excluding sources/javadoc jars).
+4. After the run succeeds, download the `neb-compile-reports` artifact (`build/reports` for diagnostics).
 
 ### Automatic trigger
 
