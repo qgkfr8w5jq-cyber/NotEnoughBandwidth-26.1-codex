@@ -129,6 +129,20 @@ Requires:
 
 **Both client and server must install NEB.** When a client without NEB connects, the server falls back to vanilla behavior for that connection.
 
+## Build with GitHub Actions
+
+### Manual trigger (recommended)
+
+1. Open the repository **Actions** tab.
+2. Select the **CI Build** workflow.
+3. Click **Run workflow** and choose your branch.
+4. After the run succeeds, download the `neb-compile-reports` artifact (`build/reports` for diagnostics).
+
+### Automatic trigger
+
+- CI runs automatically on pushes to `main`, `work`, and `1.*` branches.
+- CI also runs on pull requests to verify Java compilation (`compileJava`) before merge.
+
 ## License
 
 Copyright (C) 2025 USS_Shenzhou
