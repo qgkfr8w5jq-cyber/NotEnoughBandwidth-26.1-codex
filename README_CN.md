@@ -128,6 +128,20 @@ Zstd 压缩等级（整数 1-19），默认为 6。数值越高压缩率越好�
 
 **客户端和服务端均需安装 NEB。** 若有客户端未安装 NEB，服务端会自动对该连接回退至原版行为。
 
+## 使用 GitHub Actions 编译
+
+### 方式一：手动触发（推荐）
+
+1. 打开仓库页面 → `Actions`。
+2. 选择 **CI Build** 工作流。
+3. 点击 **Run workflow**，选择分支后运行。
+4. 编译完成后，在该次运行页面底部可下载 `neb-build-artifacts`，其中包含 `build/libs` 下的可发布 jar（已排除 sources/javadoc）。
+
+### 方式二：自动触发
+
+- 向 `main`、`work` 或 `1.*` 分支 push 代码时会自动触发 CI 打包（`jar`）。
+- 提交 Pull Request 时也会自动触发，用于在合并前验证可编译。
+
 ## 版权和许可
 
 Copyright (C) 2025 USS_Shenzhou
