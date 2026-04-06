@@ -26,6 +26,17 @@ jobs:
       - name: Grant gradlew execute permission
         run: chmod +x ./gradlew
 
+      - name: Build jar
+        run: ./gradlew jar --no-daemon --console=plain
+
+      - name: Upload jar artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: neb-build-artifacts
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
+            !build/libs/*-javadoc.jar
       - name: Compile
         run: ./gradlew compileJava --no-daemon --console=plain
 
